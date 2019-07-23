@@ -7,7 +7,7 @@ module OpenInvoice
     base_uri OpenInvoice.configs.base_uri
     headers "Content-Type" => "application/json"
     headers "Accept" => "application/json"
-    headers "API-TOKEN" => OpenInvoice.configs.app_token
+    headers "API-TOKEN" => OpenInvoice.configs.api_token
     debug_output $stdout if OpenInvoice.configs.verbose
 
     class << self
