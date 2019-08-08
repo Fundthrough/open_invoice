@@ -20,16 +20,16 @@ module OpenInvoice
       @user ||= ::OpenInvoice::Entities::User.new(user_uuid)
     end
 
-    def invoices
-      @invoices ||= ::OpenInvoice::Entities::Invoice.new(supplier_uuid)
+    def invoice
+      @invoice ||= ::OpenInvoice::Entities::Invoice.new(supplier_uuid)
     end
 
     def supplier
       @supplier ||= ::OpenInvoice::Entities::Supplier.new(supplier_uuid)
     end
 
-    def buyers
-      @buyers ||= ::OpenInvoice::Entities::Buyer.new(supplier_uuid)
+    def buyer
+      @buyer ||= ::OpenInvoice::Entities::Buyer.new(supplier_uuid)
     end
   end
 end
