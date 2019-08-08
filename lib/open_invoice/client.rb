@@ -9,7 +9,8 @@ module OpenInvoice
   class Client
     attr_reader :supplier_uuid, :user_uuid
 
-    def initialize(supplier_uuid:, user_uuid:)
+    def initialize(supplier_uuid: nil, user_uuid: nil)
+      raise "Please provid a supplier_uuid or user_uuid" if supplier_uuid.nil? && user_uuid.nil?
       @user_uuid = user_uuid
       @supplier_uuid = supplier_uuid
     end
