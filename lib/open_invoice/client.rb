@@ -11,6 +11,7 @@ module OpenInvoice
 
     def initialize(supplier_uuid: nil, user_uuid: nil)
       raise "Please provid a supplier_uuid or user_uuid" if supplier_uuid.nil? && user_uuid.nil?
+
       @user_uuid = user_uuid
       @supplier_uuid = supplier_uuid
     end
@@ -19,8 +20,16 @@ module OpenInvoice
       @user ||= ::OpenInvoice::Entities::User.new(user_uuid)
     end
 
-    def invoice
-      @invoice ||= ::OpenInvoice::Entities::Invoice.new(supplier_uuid)
+    def invoices
+      @invoices ||= ::OpenInvoice::Entities::Invoice.new(supplier_uuid)
+    end
+
+    def supplier
+      @supplier ||= ::OpenInvoice::Entities::Supplier.new(supplier_uuid)
+    end
+
+    def buyers
+      @buyers ||= ::OpenInvoice::Entities::Buyer.new(supplier_uuid)
     end
   end
 end
