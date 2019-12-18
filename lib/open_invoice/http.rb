@@ -48,7 +48,7 @@ module OpenInvoice
       end
 
       def camelcase_keys(hash)
-        hash.deep_transform_keys! { |k| k.to_s.camelcase(:lower) }
+        hash.deep_transform_keys! { |k| skip_transform?(k) ? k.to_s : k.to_s.camelcase(:lower) }
       end
 
       def server_error?(response)
@@ -57,6 +57,10 @@ module OpenInvoice
 
       def default_headers
         {}
+      end
+      
+      def skip_transform?(k)
+        ["_queryFilter"].include?(k.to_s)
       end
     end
   end
