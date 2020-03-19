@@ -6,8 +6,8 @@ require "open_invoice/version"
 Gem::Specification.new do |spec|
   spec.name          = "open_invoice"
   spec.version       = OpenInvoice::VERSION
-  spec.authors       = ["Ahmed Refaat"]
-  spec.email         = ["refat@fundthrough.com"]
+  spec.authors       = ["Ahmed Refaat", "Mikalai Okun"]
+  spec.email         = ["refat@fundthrough.com", "mikalai@fundthrough.com"]
 
   spec.summary       = %q{Open Invoice API wrapper}
   spec.description   = %q{Open Invoice API wrapper}
@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "httparty", "~> 0.14.0"
+  spec.add_runtime_dependency "httparty", "~> 0.18.0"
   spec.add_runtime_dependency "hashie", "~> 3.4.4"
   spec.add_runtime_dependency "activesupport"
 
