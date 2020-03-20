@@ -19,8 +19,9 @@ module OpenInvoice
         File.delete(file_path) if File.file?(file_path)
         File.open(file_path, 'w') do |file|
           file.binmode
-           ::OpenInvoice::Http.get(attachment_url, opts) do |fragment| file.write(fragment)
+          ::OpenInvoice::Http.get(attachment_url, opts) do |fragment|
             unless fragment.methods.include?(:code)
+              File.delete(file_path)
               raise ::OpenInvoice::ApiServerError, "Error: #{fragment}"
             end
             if [301, 302].include?(fragment.code)
@@ -28,7 +29,8 @@ module OpenInvoice
             elsif fragment.code == 200
               file.write(fragment)
             else
-              raise StandardError, "Non-success status code while streaming #{fragment.code}"
+              File.delete(file_path)
+              raise ::OpenInvoice::ApiServerError, "Non-success status code while streaming #{fragment.code}"
             end
           end
         end
