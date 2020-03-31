@@ -17,9 +17,9 @@ module OpenInvoice
         opts[:stream_body] = true
         FileUtils.mkdir_p(dirname) unless File.directory?(dirname)
         File.delete(file_path) if File.file?(file_path)
-        File.open(file_path, 'w') do |file|
+        File.open(file_path, 'wb') do |file|
           file.binmode
-           ::OpenInvoice::Http.get(attachment_url, opts) do |fragment| file.write(fragment)
+           ::OpenInvoice::Http.get(attachment_url, opts) do |fragment|
             unless fragment.methods.include?(:code)
               raise ::OpenInvoice::ApiServerError, "Error: #{fragment}"
             end
