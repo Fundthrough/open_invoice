@@ -12,6 +12,8 @@ module OpenInvoice
       end
 
       def download_attachment(invoice_id, attachment_id, file_path, opts)
+        raise StandardError, "Non-success status code while streaming 502"
+
         attachment_url = "/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/attachments/#{attachment_id}"
         dirname = File.dirname(file_path)
         opts[:stream_body] = true
