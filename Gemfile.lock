@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_invoice (0.1.1)
+    open_invoice (0.1.2)
       activesupport
       hashie (~> 3.4.4)
       httparty (~> 0.18.0)
