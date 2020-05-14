@@ -1,5 +1,13 @@
 require "bundler/setup"
 require "open_invoice"
+require "dotenv"
+Dotenv.load(".env.test")
+
+OpenInvoice.configure do |configs|
+  configs.verbose    = true
+  configs.base_uri   = ENV["OPEN_INVOICE_BASE_URI"]
+  configs.api_token  = ENV["OPEN_INVOICE_API_TOKEN"]
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
