@@ -38,8 +38,8 @@ module OpenInvoice
         nil
       end
 
-      def history(invoice_id, supplier_id, user_uuid)
-        request(:get, "/supplier/#{supplier_id}/invoices/#{invoice_id}/history?userUUID=#{user_uuid}")
+      def history(invoice_id, opts)
+        request(:get, "/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/history", opts)
       end
     end
   end
