@@ -2,6 +2,7 @@ require "bundler/setup"
 require "open_invoice"
 require "dotenv"
 require 'factory_bot'
+require "byebug"
 
 Dotenv.load(".env.test")
 
