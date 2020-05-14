@@ -1,6 +1,7 @@
 require "bundler/setup"
 require "open_invoice"
 require "dotenv"
+require "byebug"
 Dotenv.load(".env.test")
 
 OpenInvoice.configure do |configs|
