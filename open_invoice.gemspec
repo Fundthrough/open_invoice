@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "httparty", "~> 0.18.0"
-  spec.add_runtime_dependency "hashie", "~> 3.4.4"
+  spec.add_runtime_dependency "hashie", "~> 3.6.0"
   spec.add_runtime_dependency "activesupport"
 
   spec.add_development_dependency "bundler", "~> 2.0"
