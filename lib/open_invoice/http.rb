@@ -4,14 +4,19 @@ module OpenInvoice
   class Http
     include HTTParty
 
-    base_uri OpenInvoice.configs.base_uri
+    # base_uri OpenInvoice.configs.base_uri
+    base_uri ENV["OPEN_INVOICE_BASE_URI"]
+    # base_uri "https://txjd9lkcvb.execute-api.us-west-2.amazonaws.com/FTONBOARD"
     headers "Content-Type" => "application/json"
     headers "Accept" => "application/json"
-    headers "X-API-KEY" => OpenInvoice.configs.api_token
+    # headers "X-API-KEY" => OpenInvoice.configs.api_token
+    headers "X-API-KEY" => ENV["OPEN_INVOICE_API_TOKEN"]
+    # headers "X-API-KEY" => "vAv8GkJ918ay2YTRlhkfhaO5tbSCfsXa9sQjGn4s2"
     debug_output $stdout if OpenInvoice.configs.verbose
 
     class << self
       def request(method, endpoint, opts = {})
+        byebug
         request_opts = normalize_request_options(opts)
 
         response = send(method, endpoint, request_opts)
