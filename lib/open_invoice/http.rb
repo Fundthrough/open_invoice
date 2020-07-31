@@ -16,7 +16,6 @@ module OpenInvoice
 
     class << self
       def request(method, endpoint, opts = {})
-        byebug
         request_opts = normalize_request_options(opts)
 
         response = send(method, endpoint, request_opts)
