@@ -8,7 +8,7 @@ module OpenInvoice
       end
 
       def get
-        request(:get, "/users/#{user_uuid}")
+        request(:get, "/v1/users/#{user_uuid}")
       end
     end
   end
