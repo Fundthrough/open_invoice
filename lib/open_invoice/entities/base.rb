@@ -9,6 +9,7 @@ module OpenInvoice
 
       def initialize(supplier_uuid)
         @supplier_uuid = supplier_uuid
+        @api_version = "v1"
       end
 
       def self.request(*args)
