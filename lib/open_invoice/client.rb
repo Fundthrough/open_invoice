@@ -31,9 +31,5 @@ module OpenInvoice
     def buyer
       @buyer ||= ::OpenInvoice::Entities::Buyer.new(supplier_uuid)
     end
-
-    def payment
-      @buyer ||= ::OpenInvoice::Entities::Payment.new(supplier_uuid)
-    end
   end
 end
