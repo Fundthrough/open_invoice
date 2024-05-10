@@ -4,7 +4,7 @@ module OpenInvoice
   module Entities
     class Invoice < Base
       def index(opts = {})
-        request(:get, "/#{OpenInvoice::Configure::VERSION_1}/supplier/#{supplier_uuid}/invoices/page", opts)
+        request(:get, "/#{OpenInvoice::Configure::VERSION_2}/supplier/#{supplier_uuid}/invoices/page", opts)
       end
 
       def attachments(invoice_id, opts = {})
