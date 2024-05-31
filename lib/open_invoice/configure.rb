@@ -6,7 +6,6 @@ module OpenInvoice
 
     attr_writer(*KEYS)
 
-    VERSION_1 = "v1".freeze
     VERSION_2 = "v2".freeze
 
     def configure
