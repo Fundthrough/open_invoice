@@ -4,6 +4,13 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+## Enverus API Documentation
+
+The endpoints that are used in this gem are not publicly documented as Enverus has built
+a API specific for FundThrough.
+
+[Documentation for V1 and V2](https://docs.google.com/document/d/1hclQzZH_VeItW4xC8e68RhdD70dWn6l7/edit?usp=sharing&ouid=104023789344514089935&rtpof=true&sd=true)
+
 ## Installation
 
 Add this line to your application's Gemfile:

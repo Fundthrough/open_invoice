@@ -6,6 +6,8 @@ module OpenInvoice
 
     attr_writer(*KEYS)
 
+    VERSION_2 = "v2".freeze
+
     def configure
       yield self
       self

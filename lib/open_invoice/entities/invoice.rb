@@ -4,15 +4,15 @@ module OpenInvoice
   module Entities
     class Invoice < Base
       def index(opts = {})
-        request(:get, "/supplier/#{supplier_uuid}/invoices/page", opts)
+        request(:get, "/#{OpenInvoice::Configure::VERSION_2}/supplier/#{supplier_uuid}/invoices/page", opts)
       end
 
       def attachments(invoice_id, opts = {})
-        request(:get, "/supplier/#{supplier_uuid}/invoices/#{invoice_id}/attachments", opts)
+        request(:get, "/#{OpenInvoice::Configure::VERSION_2}/supplier/#{supplier_uuid}/invoices/#{invoice_id}/attachments", opts)
       end
 
       def download_attachment(invoice_id, attachment_id, file_path, opts)
-        attachment_url = "/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/attachments/#{attachment_id}"
+        attachment_url = "/#{OpenInvoice::Configure::VERSION_2}/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/attachments/#{attachment_id}"
         dirname = File.dirname(file_path)
         opts[:stream_body] = true
         FileUtils.mkdir_p(dirname) unless File.directory?(dirname)
@@ -39,7 +39,7 @@ module OpenInvoice
       end
 
       def history(invoice_id, opts = {})
-        request(:get, "/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/history", opts)
+        request(:get, "/#{OpenInvoice::Configure::VERSION_2}/supplier/#{@supplier_uuid}/invoices/#{invoice_id}/history", opts)
       end
     end
   end
