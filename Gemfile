@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem 'factory_bot'
+  gem 'factory_bot', '>= 6.5.1'
   gem "dotenv"
   gem 'byebug', '~> 9.0', '>= 9.0.5'
 end
